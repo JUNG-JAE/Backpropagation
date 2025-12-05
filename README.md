@@ -521,8 +521,8 @@ $$
 Rewriting in terms of softmax output:
 
 $$
-a^2_m
-$$ 
+abc
+$$
 
 Thus:
 
