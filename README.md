@@ -346,7 +346,10 @@ Previously, in the forward propagation phase, we summed the outputs of each neur
 2.  Define the **partial loss** for each output neuron as $L_m(\mathbf{a}^2) = \frac{1}{2}(a^2_m - y_m)^2,\quad m=1,2$, and the total loss as $L(\mathbf{a}^2) = \sum_{m=1}^2 L_m(\mathbf{a}^2)$.
 
 3.  Assume each $L_m$ depends only on its corresponding output $a^2_m$:
-       $$\frac{\partial L_j}{\partial a^2_m} = 0 \quad (j \neq m)$$
+
+$$
+\frac{\partial L_j}{\partial a^2_m} = 0 \quad (j \neq m)
+$$
 
 **Claim**
 
