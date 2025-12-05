@@ -694,7 +694,7 @@ $$
 Therefore, $\partial L/\partial z^1_j$ is:
 
 $$
-\frac{\partial L}{\partial z^1_j} = \left(\sum^2_{i=1} \delta^2_i w^2_{ij} \right)\cdot a^1_j(1-a^1_j)
+\frac{\partial L}{\partial z^1_j} = (\sum^2_{i=1} \delta^2_i w^2_{ij} )\cdot a^1_j(1-a^1_j)
 $$
 
 **The equation shows that the error signal $\delta^2_i$ from layer 2 is propagated.**
