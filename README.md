@@ -521,7 +521,7 @@ $$
 Rewriting in terms of softmax output:
 
 $$
-\frac{e^{z^2_m}}{S} = a^2_m
+\frac{e^{z^2_m}}{S} = a^2_m, \quad \frac{e^{z^2_j}}{S} = a^2_j
 $$
 
 Thus:
@@ -702,7 +702,7 @@ $$
 Finally, the error term for hidden layer 1 is:
 
 $$
-\delta^1_j := \frac{\partial L}{\partial z^1_j} = a^1_j(1-a^1_j)\sum_{i=1}^2 w^2_{ij}\delta^2_i   
+\delta^1_j := \frac{\partial L}{\partial z^1_j} = a^1_j(1-a^1_j)\sum_{i=1}^2 w^2_{ij}\delta^2_i
 $$
 
 **Calculating $\delta^1_j$ with Example Values**
