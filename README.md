@@ -2,7 +2,7 @@
 
 This lecture covers the fundamental mechanics of forward and backward propagation in Neural Networks (NN). The network structure and notation used in this lecture are defined as follows:
 
-<p align="center"> <img src="./img/NN.png" width="50%" /></p>
+<p align="center"> <img src="./img/NN.png" width="70%" /></p>
 
 + $w^l_{jk}$ is the weight from the $k^{th}$ neuron in the $(l-1)^{th}$ layer to $j^{th}$ neuron in the $l^{th}$ layer. 
 + $b^l_j$ is the basis of the $j^{th}$ neuron in the $l^{th}$ layer.
@@ -40,11 +40,11 @@ W^1 =
 $$
 
 Expressed in notation:
-+ $w^1_{11}=0.2,\; w^1_{12}=-0.3,\; w^1_{13}=0.5$
-+ $w^1_{21}=0.7,\; w^1_{22}=0.1,\; w^1_{23}=-0.2$
-+ $w^1_{31}=-0.5,\; w^1_{32}=0.4,\; w^1_{33}=0.3$
-+ $w^1_{41}=0.1,\; w^1_{42}=-0.4,\; w^1_{43}=0.2$
-+ $b^1_1=0.1,\; b^1_2=-0.2,\; b^1_3=0.05,\; b^1_4=0$
++ $w^1_{11}=0.2, w^1_{12}=-0.3, w^1_{13}=0.5$
++ $w^1_{21}=0.7, w^1_{22}=0.1, w^1_{23}=-0.2$
++ $w^1_{31}=-0.5, w^1_{32}=0.4, w^1_{33}=0.3$
++ $w^1_{41}=0.1, w^1_{42}=-0.4, w^1_{43}=0.2$
++ $b^1_1=0.1, b^1_2=-0.2, b^1_3=0.05, b^1_4=0$
 
 **Layer2**
 
@@ -62,9 +62,9 @@ W^2 =
 $$
 
 Expressed in notation:
-+ $w^2_{11}=0.3,\; w^2_{12}=-0.6,\; w^2_{13}=0.2,\; w^2_{14}=0.1$ 
-+ $w^2_{21}=-0.2,\; w^2_{22}=0.1,\; w^2_{23}=0.4,\; w^2_{24}=-0.5$
-+ $b^2_1=0.05,\; b^2_2=-0.1$
++ $w^2_{11}=0.3, w^2_{12}=-0.6, w^2_{13}=0.2, w^2_{14}=0.1$ 
++ $w^2_{21}=-0.2, w^2_{22}=0.1, w^2_{23}=0.4, w^2_{24}=-0.5$
++ $b^2_1=0.05, b^2_2=-0.1$
 
 Total number of weight: $3\times 4 + 4\times 2 = 20$
 
@@ -125,7 +125,8 @@ $$
 
 $$
 \begin{align}z^1_4 &= 0.1\cdot 1.0 + (-0.4)\cdot 0.5 + 0.2\cdot(-1.0) + 0.0\\
-&= 0.1 - 0.2 - 0.2\\ &= -0.3
+&= 0.1 - 0.2 - 0.2\\ 
+&= -0.3
 \end{align}
 $$
 
@@ -138,11 +139,11 @@ $$
 Layer 1 Summary
 
 $$
-z^1 \approx (-0.35,\; 0.75,\; -0.55,\; -0.30)
+z^1 \approx (-0.35, 0.75, -0.55, -0.30)
 $$
 
 $$
-a^1 \approx (0.4134,\; 0.6792,\; 0.3659,\; 0.4256)
+a^1 \approx (0.4134, 0.6792, 0.3659, 0.4256)
 $$
 
 ### 2.2.2. Layer 2 (Output layer)
@@ -154,8 +155,8 @@ Output Neuron 1 $j = 1$
 $$
 \begin{align}
 z^2_1 &= 0.3\cdot a^1_1 + (-0.6)\cdot a^1_2 + 0.2\cdot a^1_3 + 0.1\cdot a^1_4 + 0.05\\
-&\approx0.3 \cdot 0.4134+(-0.6) \cdot 0.6792+0.2 \cdot 0.3659+0.1 \cdot 0.4256 + 0.05\\
-&\approx0.1240 - 0.4075 + 0.0732 + 0.0426 + 0.05\\ 
+&\approx 0.3 \cdot 0.4134+(-0.6) \cdot 0.6792+0.2 \cdot 0.3659+0.1 \cdot 0.4256 + 0.05\\
+&\approx 0.1240 - 0.4075 + 0.0732 + 0.0426 + 0.05\\ 
 &\approx -0.1178
 \end{align}
 $$
@@ -169,10 +170,12 @@ z^2_2 &= (-0.2)\cdot a^1_1 + 0.1\cdot a^1_2 + 0.4\cdot a^1_3 + (-0.5)\cdot a^1_4
 &\approx -0.0827 + 0.0679 + 0.1464 - 0.2128 - 0.1\\ 
 &\approx -0.1812
 \end{align}
+$$
+
+Applying Softmax
 
 $$
-Applying Softmax
-$$\text{softmax}(z)_j = \frac{e^{z_j}}{\sum_i e^{z_i}}
+\text{softmax}(z)_j = \frac{e^{z_j}}{\sum_i e^{z_i}}
 $$
 
 Since there are two neurons:
@@ -247,7 +250,7 @@ The loss function can be expressed as a function of the network's output values:
 
 ### 3.2.1. Error Signal $\delta^2_j = \dfrac{\partial L}{\partial z^2_j}$
 
-<p align="center"> <img src="./img/1.png" width="50%" /></p>
+<p align="center"> <img src="./img/1.png" width="70%" /></p>
 
 Recall that our goal is to update $w$ and $b$ to reduce $L$. Since $z$ is a linear combination of $w$ and $b$, we must calculate the change in $L$ with respect to $z$. Therefore, according to the chain rule, the change in $L$ with respect to the change in $z^2_j$ is expressed as follows (refer to the proof of the multivariable chain rule):
 
@@ -292,14 +295,10 @@ $$
 $$
 \begin{align}
 \frac{dw}{dz}&= \lim_{\Delta z \to 0}\frac{w\big(x(z+\Delta z),\, y(z+\Delta z)\big)-w\big(x(z),\, y(z)\big)}{\Delta z}\\
-
 &=\lim_{\Delta z \to 0}\left[\frac{w\big(x(z+\Delta z),\, y(z+\Delta z)\big)- w\big(x(z),\, y(z+\Delta z)\big)}{\Delta z}+
 \frac{w\big(x(z),\, y(z+\Delta z)\big)- w\big(x(z),\, y(z)\big)}{\Delta z}\right]\\
-
 &=\lim_{\Delta z \to 0}\left[\frac{w\big(x(z+\Delta z),\, y(z+\Delta z)\big)- w\big(x(z),\, y(z+\Delta z)\big)}{x(z+\Delta z) - x(z)}\cdot\frac{x(z+\Delta z) - x(z)}{\Delta z}\right]\\
-
 &\;\;\qquad + \left[\frac{w\big(x(z),\, y(z+\Delta z)\big)- w\big(x(z),\, y(z)\big)}{y(z+\Delta z) - y(z)}\cdot\frac{y(z+\Delta z) - y(z)}{\Delta z}\right]\\
-
 &=\frac{\partial w}{\partial x}\frac{dx}{dz}+\frac{\partial w}{\partial y}\frac{dy}{dz}
 \end{align}
 $$
@@ -416,11 +415,8 @@ $$
 $$
 \begin{align}
 & \dfrac{\partial a^2_1}{\partial z^2_1}\approx 0.515852(1-0.515852)\approx 0.249749\\
-
 & \dfrac{\partial a^2_2}{\partial z^2_1}\approx -0.484148 \cdot 0.515852 \approx -0.249749\\
-
 & \dfrac{\partial a^2_1}{\partial z^2_2} \approx -0.515852\cdot 0.484148 \approx -0.249749\\
-
 & \dfrac{\partial a^2_2}{\partial z^2_2}\approx 0.484148(1-0.484148) \approx 0.249749\\
 \end{align}
 $$
@@ -525,8 +521,7 @@ $$
 Rewriting in terms of softmax output:
 
 $$
-\frac{e^{z^2_m}}{S} = a^2_m,\qquad  
-\frac{e^{z^2_j}}{S} = a^2_j  
+\frac{e^{z^2_m}}{S} = a^2_m,\qquad \frac{e^{z^2_j}}{S} = a^2_j  
 $$ 
 
 Thus:
@@ -578,7 +573,7 @@ In Softmax, increasing itself (logit $z_m$) directly increases the corresponding
 
 ### 3.2.4. Gradients of Output Layer Weights & Biases
 
-<p align="center"> <img src="./img/2.png" width="50%" /></p>
+<p align="center"> <img src="./img/2.png" width="70%" /></p>
 
 This section calculates the gradient for the weights, highlighted in green in the diagram. Biases are not shown in the diagram. Let's update ${\partial L}/{\partial w^2_{jk}}$ and ${\partial L}/{\partial b^2_{j}}$. To do this, recall $z^2_j$:
 
@@ -613,14 +608,8 @@ Next, looking at the example value substitution (row $= j$, column $= k$):
 $$
 \nabla_{W^2} =  
 \begin{bmatrix}  
-\frac{\partial L}{\partial w^2_{11}} &  
-\frac{\partial L}{\partial w^2_{12}} &  
-\frac{\partial L}{\partial w^2_{13}} &  
-\frac{\partial L}{\partial w^2_{14}} \\ 
-\frac{\partial L}{\partial w^2_{21}} &  
-\frac{\partial L}{\partial w^2_{22}} &  
-\frac{\partial L}{\partial w^2_{23}} &  
-\frac{\partial L}{\partial w^2_{24}}  
+\frac{\partial L}{\partial w^2_{11}} & \frac{\partial L}{\partial w^2_{12}} & \frac{\partial L}{\partial w^2_{13}} & \frac{\partial L}{\partial w^2_{14}} \\
+\frac{\partial L}{\partial w^2_{21}} & \frac{\partial L}{\partial w^2_{22}} & \frac{\partial L}{\partial w^2_{23}} & \frac{\partial L}{\partial w^2_{24}}
 \end{bmatrix}  
 \approx  
 \begin{bmatrix}  
@@ -669,7 +658,7 @@ $$
 
 ### 3.3.1. Backpropagating Error to Hidden Layer $\delta^1_j = \dfrac{\partial L}{\partial z^1_j}$
 
-<p align="center"> <img src="./img/3.png" width="50%" /></p>
+<p align="center"> <img src="./img/3.png" width="70%" /></p>
 
 We now perform backpropagation at layer 1. We compute the gradients corresponding to the blue highlights in the figure. To define the error term for layer 1, we first express $\partial L/\partial z^1_j$ using the multivariate chain rule. For each neuron $j$ in the hidden layer:
 
@@ -705,10 +694,12 @@ $$
 Therefore, $\partial L/\partial z^1_j$ is:
 
 $$
-\frac{\partial L}{\partial z^1_j} = \left(\sum_{i=1}^2 \delta^2_i w^2_{ij}\right)\cdot a^1_j(1-a^1_j)  
+\frac{\partial L}{\partial z^1_j} = \left(\sum_{i=1}^2 \delta^2_i w^2_{ij}\right)\cdot a^1_j(1-a^1_j)  
 $$
 
-**The equation shows that the error signal $\delta^2_i$ from layer 2 is propagated.** Finally, the error term for hidden layer 1 is:
+**The equation shows that the error signal $\delta^2_i$ from layer 2 is propagated.**
+
+Finally, the error term for hidden layer 1 is:
 
 $$
 \delta^1_j := \frac{\partial L}{\partial z^1_j} = a^1_j(1-a^1_j)\sum_{i=1}^2 w^2_{ij}\delta^2_i   
@@ -773,7 +764,7 @@ $$
 Final gradient results for hidden layer activation $z^1_j$:
 
 $$
-\delta^1 \approx (\delta^1_1,\delta^1_2,\delta^1_3,\delta^1_4) = (-0.029322,\; 0.036886,\; 0.011221,\; -0.035471)   
+\delta^1 \approx (\delta^1_1,\delta^1_2,\delta^1_3,\delta^1_4) = (-0.029322, 0.036886, 0.011221, -0.035471)   
 $$
 
 > **Proof of Sigmoid Derivative**
@@ -829,7 +820,7 @@ $$
 
 ### 3.3.2. Gradients of Hidden Layer Weights & Biases
 
-<p align="center"> <img src="./img/4.png" width="50%" /></p>
+<p align="center"> <img src="./img/4.png" width="70%" /></p>
 
 We compute gradients for $w^1$ and $b^1$ based on the hidden layer's error signal. We calculate the orange highlights in the figure.
 
@@ -893,7 +884,7 @@ $$
 $$
 
 $$
-\nabla_{b^1} = \left( \frac{\partial L}{\partial b^1_1}, \frac{\partial L}{\partial b^1_2}, \frac{\partial L}{\partial b^1_3}, \frac{\partial L}{\partial b^1_4} \right) \approx (-0.029322,\; 0.036886,\; 0.011221,\; -0.035471)  
+\nabla_{b^1} = \left( \frac{\partial L}{\partial b^1_1}, \frac{\partial L}{\partial b^1_2}, \frac{\partial L}{\partial b^1_3}, \frac{\partial L}{\partial b^1_4} \right) \approx (-0.029322, 0.036886, 0.011221, -0.035471)  
 $$
 
 ## 3.4. From Loss to Weights & Biases Update
@@ -1116,7 +1107,7 @@ class MyLinear(Function):
 
 In essence, PyTorch's internal LinearBackward handles it in this form. The difference is that it efficiently handles batching, memory, and parallelization.
 
-**NN**
+**Neurl Network**
 
 ```python
 class MyTwoLayerNet(nn.Module):
