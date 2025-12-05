@@ -521,7 +521,7 @@ $$
 Rewriting in terms of softmax output:
 
 $$
-abc
+\frac{e^{z^2_m}}{S} = a^2_m
 $$
 
 Thus:
