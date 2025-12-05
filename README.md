@@ -520,9 +520,11 @@ $$
 
 Rewriting in terms of softmax output:
 
+
 $$
 \frac{e^{z^2_m}}{S} = a^2_m, \quad \frac{e^{z^2_j}}{S} = a^2_j
 $$ 
+
 
 Thus:
 
