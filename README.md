@@ -18,7 +18,7 @@ This section demonstrates how forward propagation works using example values.
 ## 2.1. Example
 **Input**
 
-$a^0 = (a^0_1,\; a^0_2,\; a^0_3) = (1.0,\; 0.5,\; -1.0)$
+$a^0 = (a^0_1, a^0_2, a^0_3) = (1.0, 0.5, -1.0)$
 
 **Layer 1**
 
@@ -298,7 +298,7 @@ $$
 &=\lim_{\Delta z \to 0}\left[\frac{w\big(x(z+\Delta z),\, y(z+\Delta z)\big)- w\big(x(z),\, y(z+\Delta z)\big)}{\Delta z}+
 \frac{w\big(x(z),\, y(z+\Delta z)\big)- w\big(x(z),\, y(z)\big)}{\Delta z}\right]\\
 &=\lim_{\Delta z \to 0}\left[\frac{w\big(x(z+\Delta z),\, y(z+\Delta z)\big)- w\big(x(z),\, y(z+\Delta z)\big)}{x(z+\Delta z) - x(z)}\cdot\frac{x(z+\Delta z) - x(z)}{\Delta z}\right]\\
-&\;\;\qquad + \left[\frac{w\big(x(z),\, y(z+\Delta z)\big)- w\big(x(z),\, y(z)\big)}{y(z+\Delta z) - y(z)}\cdot\frac{y(z+\Delta z) - y(z)}{\Delta z}\right]\\
+&\qquad + \left[\frac{w\big(x(z),\, y(z+\Delta z)\big)- w\big(x(z),\, y(z)\big)}{y(z+\Delta z) - y(z)}\cdot\frac{y(z+\Delta z) - y(z)}{\Delta z}\right]\\
 &=\frac{\partial w}{\partial x}\frac{dx}{dz}+\frac{\partial w}{\partial y}\frac{dy}{dz}
 \end{align}
 $$
@@ -317,13 +317,13 @@ $$
 
 **Substituting example values**:
 
-$j=1$; $y_1 = 1$
+$j=1$, $y_1 = 1$
 
 $$
 \frac{\partial L}{\partial a^2_1} = a^2_1 - 1 \approx 0.515852 - 1 = -0.484148
 $$
 
-$j=2; y_2 = 0$
+$j=2$, $y_2 = 0$
 
 $$
 \frac{\partial L}{\partial a^2_2} = a^2_2 - 0 \approx 0.484148
@@ -521,7 +521,7 @@ $$
 Rewriting in terms of softmax output:
 
 $$
-\frac{e^{z^2_m}}{S} = a^2_m,\qquad \frac{e^{z^2_j}}{S} = a^2_j  
+\frac{e^{z^2_m}}{S} = a^2_m, \qquad \frac{e^{z^2_j}}{S} = a^2_j
 $$ 
 
 Thus:
@@ -606,16 +606,16 @@ Recall that we defined $\delta^2_j=\partial L/\partial z^2_j$ previously. Also, 
 Next, looking at the example value substitution (row $= j$, column $= k$):
 
 $$
-\nabla_{W^2} =  
-\begin{bmatrix}  
+\nabla_{W^2} = 
+\begin{bmatrix}
 \frac{\partial L}{\partial w^2_{11}} & \frac{\partial L}{\partial w^2_{12}} & \frac{\partial L}{\partial w^2_{13}} & \frac{\partial L}{\partial w^2_{14}} \\
 \frac{\partial L}{\partial w^2_{21}} & \frac{\partial L}{\partial w^2_{22}} & \frac{\partial L}{\partial w^2_{23}} & \frac{\partial L}{\partial w^2_{24}}
 \end{bmatrix}  
-\approx  
-\begin{bmatrix}  
--0.099969 & -0.164246 & -0.088477 & -0.102913 \\  
+\approx 
+\begin{bmatrix}
+-0.099969 & -0.164246 & -0.088477 & -0.102913 \\
 0.099969 & 0.164246 & 0.088477 & 0.102913  
-\end{bmatrix}  
+\end{bmatrix}
 $$
 
 Looking at just one in detail:
