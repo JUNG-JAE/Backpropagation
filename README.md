@@ -521,7 +521,7 @@ $$
 Rewriting in terms of softmax output:
 
 $$
-\frac{e^{z^2_m}}{S} = a^2_m, \qquad \frac{e^{z^2_j}}{S} = a^2_j
+\frac{e^{z^2_m}}{S} = a^2_m, \quad \frac{e^{z^2_j}}{S} = a^2_j
 $$ 
 
 Thus:
@@ -694,7 +694,7 @@ $$
 Therefore, $\partial L/\partial z^1_j$ is:
 
 $$
-\frac{\partial L}{\partial z^1_j} = \left(\sum_{i=1}^2 \delta^2_i w^2_{ij}\right)\cdot a^1_j(1-a^1_j)  
+\frac{\partial L}{\partial z^1_j} = \left(\sum^2_{i=1} \delta^2_i w^2_{ij}\right)\cdot a^1_j(1-a^1_j)
 $$
 
 **The equation shows that the error signal $\delta^2_i$ from layer 2 is propagated.**
