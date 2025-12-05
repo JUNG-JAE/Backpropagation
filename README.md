@@ -206,7 +206,7 @@ $$
 Assuming a target vector of
 
 $$
-y = (1,\; 0)
+y = (1, 0)
 $$
 
 and calculating the MSE (Mean Squared Error) for the output $a^2 = (a^2_1, a^2_2)$:
@@ -215,8 +215,8 @@ $$
 L = \frac{1}{2}\sum_{j=1}^2 (a^2_j - y_j)^2
 $$
 
-* $a^2_1 \approx 0.5159,; y_1 = 1$
-* $a^2_2 \approx 0.4841,; y_2 = 0$
+* $a^2_1 \approx 0.5159, y_1 = 1$
+* $a^2_2 \approx 0.4841, y_2 = 0$
 
 $$
 \begin{align}
@@ -241,7 +241,7 @@ $$
 L = \frac{1}{n} \sum_x L_x.
 $$
 
-This clearly holds for the quadratic loss, where the loss for a single example is $L_x = \frac{1}{2}\|y - a^{output}\|^2$. Why is this assumption necessary? Backpropagation actually computes $\frac{\partial L_x}{\partial w},\; \frac{\partial L_x}{\partial b}$ for a single training example. The partial derivatives for the total loss $\frac{\partial L}{\partial w},\; \frac{\partial L}{\partial b}$ are obtained by averaging over the training examples. Thus, this assumption is also required to use approaches like SGD.
+This clearly holds for the quadratic loss, where the loss for a single example is $L_x = \frac{1}{2}\|y - a^{output}\|^2$. Why is this assumption necessary? Backpropagation actually computes $\frac{\partial L_x}{\partial w}, \frac{\partial L_x}{\partial b}$ for a single training example. The partial derivatives for the total loss $\frac{\partial L}{\partial w}, \frac{\partial L}{\partial b}$ are obtained by averaging over the training examples. Thus, this assumption is also required to use approaches like SGD.
 
 **Assumption 2: The loss function can be written as a function of the outputs from the neural network.**
 The loss function can be expressed as a function of the network's output values: $L = L(a^{output})$. Since backpropagation starts from the final Loss, it cannot be applied if intermediate layer values are used as the loss.
@@ -332,7 +332,7 @@ $$
 Summary
 
 $$
-\frac{\partial L}{\partial a^2} \approx (-0.484148,\; 0.484148)
+\frac{\partial L}{\partial a^2} \approx (-0.484148, 0.484148)
 $$
 
 > **Proof of Scalar Function Chain Rule Application (optional)**
@@ -447,7 +447,7 @@ $$
 Summary:
 
 $$
-\delta^2 \approx (\delta^2_1, \delta^2_2) = (-0.241831,\; 0.241831)
+\delta^2 \approx (\delta^2_1, \delta^2_2) = (-0.241831, 0.241831)
 $$
 
 This is the gradient (error signal) for the output layer logit $z^2_j$.
@@ -712,8 +712,8 @@ $$
 
 Values we have so far:
 
-+ $a^1 \approx (0.413382,\; 0.679179,\; 0.365864,\; 0.425557)$
-+ $\delta^2 \approx (-0.241831,\; 0.241831)$
++ $a^1 \approx (0.413382, 0.679179, 0.365864, 0.425557)$
++ $\delta^2 \approx (-0.241831, 0.241831)$
 + $W^2:$
 
 $$
@@ -899,7 +899,7 @@ What we have calculated so far are "gradients":
 
 We have computed them for all 20 weights and 6 biases.
 
-Now, assuming we perform gradient descent with $learning\; rate (\eta)$:
+Now, assuming we perform gradient descent with $learning rate (\eta)$:
 
 $$
 \begin{align}
